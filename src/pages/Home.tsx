@@ -34,7 +34,7 @@ const Home: React.FC = () => {
             <BookSearch onClose={() => setIsModalOpen(false)} />
             </Modal>
 
-            {/* Отображение добавленных книг */}
+            {/* Show books */}
             <section className="mb-8">
                 <h2 className="text-xl font-semibold mb-2">Reading Now</h2>
                 {library.length > 0 ? (

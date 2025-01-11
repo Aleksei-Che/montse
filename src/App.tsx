@@ -6,6 +6,7 @@ import Profile from "./components/Profile";
 import Navbar from "./components/Navbar";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import EnterPage from "./pages/EnterPage";
 
 const App: React.FC = () => {
     return (
@@ -17,20 +18,20 @@ const App: React.FC = () => {
 
 const AppContent: React.FC = () => {
     const location = useLocation();
-
-    // Проверяем, отображать ли Navbar
     const showNavbar = ["/home", "/explorar", "/profile"].includes(location.pathname);
 
     return (
-        <div className="pb-16"> {/* Отступ для Navbar */}
+        <div className="pb-16"> 
             <Routes>
                 <Route path="/" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/explorar" element={<Explorar />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/enter" element={<EnterPage />} /> 
+                <Route path="*" element={<LoginPage />} /> 
             </Routes>
-            {showNavbar && <Navbar />}
+            {showNavbar && <Navbar />} 
         </div>
     );
 };
