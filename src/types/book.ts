@@ -4,4 +4,7 @@ export interface Book {
     title: string;
     authors: string[];
     thumbnail: string;
+    readingStartTime?: string;
+    finishedTime?: string; // добавляем это поле
+    readingTime?: string;
 }
